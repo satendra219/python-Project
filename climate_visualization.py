@@ -74,15 +74,17 @@ plt.show()
 
 
 
-
-
-# 6. Histogram - Rainfall Distribution
-plt.figure(figsize=(10, 6))
-sns.histplot(data=df, x="Mean_Rainfall_mm", bins=30, kde=True, color='skyblue')
-plt.title("Distribution of Mean Rainfall")
-plt.xlabel("Rainfall (mm)")
+# 5. Scatter Plot - Max vs Min Temp
+plt.figure(figsize=(8, 6))
+sns.scatterplot(data=df, x="Mean_Temp_Min", y="Mean_Temp_Max", hue="Station_Name", legend=False)
+plt.title("Max vs Min Temperature")
+plt.xlabel("Min Temp (°C)")
+plt.ylabel("Max Temp (°C)")
 plt.tight_layout()
 plt.show()
+
+
+
 
 
 
