@@ -113,6 +113,20 @@ plt.show()
 
 
 
+# 9. Line Plot - Rainfall Comparison for Top 3 Stations
+top3 = df["Station_Name"].unique()[:3]
+plt.figure(figsize=(12, 6))
+for name in top3:
+    data = df[df["Station_Name"] == name].sort_values("Month")
+    plt.plot(data["Month"], data["Mean_Rainfall_mm"], marker='o', label=name)
+plt.title("Rainfall Trends Comparison (3 Stations)")
+plt.xlabel("Month")
+plt.ylabel("Rainfall (mm)")
+plt.legend()
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
 
 
 # 10. Grouped Bar Chart - Avg Max & Min Temp for Top 5 Stations
