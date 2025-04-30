@@ -129,16 +129,4 @@ plt.show()
 
 
 
-# 10. Grouped Bar Chart - Avg Max & Min Temp for Top 5 Stations
 
-top5 = df["Station_Name"].value_counts().head(5).index
-df_top5 = df[df["Station_Name"].isin(top5)]
-avg_temp = df_top5.groupby("Station_Name")[["Mean_Temp_Max", "Mean_Temp_Min"]].mean().reset_index()
-avg_temp_melt = avg_temp.melt(id_vars="Station_Name", var_name="Type", value_name="Temp")
-plt.figure(figsize=(10, 6))
-sns.barplot(data=avg_temp_melt, x="Station_Name", y="Temp", hue="Type")
-plt.title("Avg Max & Min Temp - Top 5 Stations")
-plt.xlabel("Station")
-plt.ylabel("Temperature (°C)")
-plt.tight_layout()
-plt.show()
