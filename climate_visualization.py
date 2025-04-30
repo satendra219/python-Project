@@ -36,19 +36,18 @@ plt.show()
 
 
 
-
-
-
-# 3. Heatmap - Avg Max Temp per Station per Month
-pivot_temp = df.pivot_table(index="Station_Name", columns="Month", values="Mean_Temp_Max", aggfunc="mean")
-pivot_temp = pivot_temp[monthly_order]
-plt.figure(figsize=(14, 8))
-sns.heatmap(pivot_temp, cmap="YlOrRd", linewidths=0.5, linecolor='gray')
-plt.title("Avg Max Temperature per Station per Month")
+# 2. Bar Plot - Rainfall for a Station
+plt.figure(figsize=(10, 5))
+sns.barplot(data=df_station, x="Month", y="Mean_Rainfall_mm", palette="Blues_d")
+plt.title(f"Monthly Rainfall - {station}")
 plt.xlabel("Month")
-plt.ylabel("Station")
+plt.ylabel("Rainfall (mm)")
+plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
+
+
+
 
 
 
