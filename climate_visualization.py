@@ -49,15 +49,19 @@ plt.show()
 
 
 
-
-
-# 4. Boxplot - Max Temps across Stations
-plt.figure(figsize=(12, 6))
-sns.boxplot(data=df, x="Station_Name", y="Mean_Temp_Max")
-plt.xticks(rotation=90)
-plt.title("Max Temperature Distribution by Station")
+# 3. Heatmap - Avg Max Temp per Station per Month
+pivot_temp = df.pivot_table(index="Station_Name", columns="Month", values="Mean_Temp_Max", aggfunc="mean")
+pivot_temp = pivot_temp[monthly_order]
+plt.figure(figsize=(14, 8))
+sns.heatmap(pivot_temp, cmap="YlOrRd", linewidths=0.5, linecolor='gray')
+plt.title("Avg Max Temperature per Station per Month")
+plt.xlabel("Month")
+plt.ylabel("Station")
 plt.tight_layout()
 plt.show()
+
+
+
 
 
 
