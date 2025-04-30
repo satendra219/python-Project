@@ -85,7 +85,13 @@ plt.show()
 
 
 
-
+# 6. Histogram - Rainfall Distribution
+plt.figure(figsize=(10, 6))
+sns.histplot(data=df, x="Mean_Rainfall_mm", bins=30, kde=True, color='skyblue')
+plt.title("Distribution of Mean Rainfall")
+plt.xlabel("Rainfall (mm)")
+plt.tight_layout()
+plt.show()
 
 
 # 7. Violin Plot - Min Temp by Month
