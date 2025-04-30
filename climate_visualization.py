@@ -20,21 +20,6 @@ df['Month'] = pd.Categorical(df['Month'], categories=monthly_order, ordered=True
 
 
 
-# 1. Line Plot - Temperature Trend for a Station
-station = "Abu"
-df_station = df[df["Station_Name"] == station].sort_values("Month")
-plt.figure(figsize=(10, 5))
-plt.plot(df_station["Month"], df_station["Mean_Temp_Max"], label="Max Temp (°C)", marker="o")
-plt.plot(df_station["Month"], df_station["Mean_Temp_Min"], label="Min Temp (°C)", marker="s")
-plt.title(f"Monthly Temperature Trends - {station}")
-plt.xlabel("Month")
-plt.ylabel("Temperature (°C)")
-plt.legend()
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
-
-
 
 # 2. Bar Plot - Rainfall for a Station
 plt.figure(figsize=(10, 5))
