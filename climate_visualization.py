@@ -35,15 +35,7 @@ plt.tight_layout()
 plt.show()
 
 
-# 2. Bar Plot - Rainfall for a Station
-plt.figure(figsize=(10, 5))
-sns.barplot(data=df_station, x="Month", y="Mean_Rainfall_mm", palette="Blues_d")
-plt.title(f"Monthly Rainfall - {station}")
-plt.xlabel("Month")
-plt.ylabel("Rainfall (mm)")
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
+
 
 
 
