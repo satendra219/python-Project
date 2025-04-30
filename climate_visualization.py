@@ -63,16 +63,16 @@ plt.show()
 
 
 
-
-
-# 5. Scatter Plot - Max vs Min Temp
-plt.figure(figsize=(8, 6))
-sns.scatterplot(data=df, x="Mean_Temp_Min", y="Mean_Temp_Max", hue="Station_Name", legend=False)
-plt.title("Max vs Min Temperature")
-plt.xlabel("Min Temp (°C)")
-plt.ylabel("Max Temp (°C)")
+# 4. Boxplot - Max Temps across Stations
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=df, x="Station_Name", y="Mean_Temp_Max")
+plt.xticks(rotation=90)
+plt.title("Max Temperature Distribution by Station")
 plt.tight_layout()
 plt.show()
+
+
+
 
 
 
